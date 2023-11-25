@@ -54,7 +54,7 @@ export function ProjectTodoTable() {
       // - here and on other devices!
       project.tasks.append(task.id);
     },
-    [project?.tasks, project?.meta.group],
+    [project?.tasks, project?.meta.group]
   );
 
   return (
@@ -84,7 +84,7 @@ export function ProjectTodoTable() {
         </TableHeader>
         <TableBody>
           {project?.tasks?.map(
-            (task) => task && <TaskRow key={task.id} task={task} />,
+            (task) => task && <TaskRow key={task.id} task={task} />
           )}
           <NewTaskInputRow createTask={createTask} disabled={!project} />
         </TableBody>
