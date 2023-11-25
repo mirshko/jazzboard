@@ -31,10 +31,12 @@ export const PrettyAuthUI: LocalAuthComponent = ({
               autoComplete="webauthn"
               className="text-base"
             />
+
             <Button asChild>
               <Input type="submit" value="Sign Up as new account" />
             </Button>
           </form>
+
           <Button onClick={logIn}>Log In with existing account</Button>
         </div>
       )}

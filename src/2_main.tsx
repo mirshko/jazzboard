@@ -101,17 +101,20 @@ export function HomeScreen() {
     <>
       {me.root?.projects?.length ? <h1>My Projects</h1> : null}
 
-      {me.root?.projects?.map((project) => {
-        return (
-          <Button
-            key={project?.id}
-            onClick={() => navigate("/project/" + project?.id)}
-            variant="outline"
-          >
-            {project?.title}
-          </Button>
-        );
-      })}
+      <ul>
+        {me.root?.projects?.map((project, idx) => {
+          return (
+            <li key={`${idx}-${project?.id}`}>
+              <Button
+                onClick={() => navigate("/project/" + project?.id)}
+                variant="outline"
+              >
+                {project?.title}
+              </Button>
+            </li>
+          );
+        })}
+      </ul>
 
       <NewProjectForm />
     </>
