@@ -30,9 +30,9 @@ npm run dev
 - [`src/basicComponents`](./src/basicComponents): simple components to build the UI, unrelated to Jazz (uses [shadcn/ui](https://ui.shadcn.com))
 - [`src/components`](./src/components/): helper components that do contain Jazz-specific logic, but aren't very relevant to understand the basics of Jazz and CoJSON
 - [`src/1_types.ts`](./src/1_types.ts),
-[`src/2_main.tsx`](./src/2_main.tsx),
-[`src/3_NewProjectForm.tsx`](./src/3_NewProjectForm.tsx),
-[`src/4_ProjectTodoTable.tsx`](./src/4_ProjectTodoTable.tsx): the main files for this example, see the walkthrough below
+  [`src/2_main.tsx`](./src/2_main.tsx),
+  [`src/3_NewProjectForm.tsx`](./src/3_NewProjectForm.tsx),
+  [`src/4_ProjectTodoTable.tsx`](./src/4_ProjectTodoTable.tsx): the main files for this example, see the walkthrough below
 
 ## Walkthrough
 
@@ -55,7 +55,6 @@ This is the whole Todo List app!
 ## Questions / problems / feedback
 
 If you have feedback, let us know on [Discord](https://discord.gg/utDMjHYg42) or open an issue or PR to fix something that seems wrong.
-
 
 ## Configuration: sync server
 

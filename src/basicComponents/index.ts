@@ -6,7 +6,6 @@ export { Toaster } from "./ui/toaster";
 export { useToast } from "./ui/use-toast";
 export { SubmittableInput } from "./SubmittableInput";
 export { TitleAndLogo } from "./TitleAndLogo";
-export { ThemeProvider } from "./themeProvider";
 export {
   Table,
   TableBody,

@@ -34,14 +34,14 @@ export type TodoAccountRoot = CoMap<{
  *  You can use it to set up the account root and any other initial CoValues you need.
  */
 export const migration: AccountMigration<Profile, TodoAccountRoot> = (
-  account,
+  account
 ) => {
   if (!account.get("root")) {
     account.set(
       "root",
       account.createMap<TodoAccountRoot>({
         projects: account.createList<ListOfProjects>().id,
-      }).id,
+      }).id
     );
   }
 };

@@ -10,11 +10,7 @@ import "./index.css";
 import { WithJazz, useJazz, useAcceptInvite } from "jazz-react";
 import { LocalAuth } from "jazz-react-auth-local";
 
-import {
-  Button,
-  ThemeProvider,
-  TitleAndLogo,
-} from "./basicComponents/index.ts";
+import { Button, TitleAndLogo } from "./basicComponents/index.ts";
 import { PrettyAuthUI } from "./components/Auth.tsx";
 import { NewProjectForm } from "./3_NewProjectForm.tsx";
 import { ProjectTodoTable } from "./4_ProjectTodoTable.tsx";
@@ -41,15 +37,14 @@ const auth = LocalAuth({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <TitleAndLogo name={appName} />
-      <div className="flex flex-col h-full items-center justify-start gap-10 pt-10 pb-10 px-5">
-        <WithJazz auth={auth} migration={migration as AccountMigration}>
-          <App />
-        </WithJazz>
-      </div>
-    </ThemeProvider>
-  </React.StrictMode>,
+    <TitleAndLogo name={appName} />
+
+    <div className="flex flex-col h-full items-center justify-start gap-10 pt-10 pb-10 px-5">
+      <WithJazz auth={auth} migration={migration as AccountMigration}>
+        <App />
+      </WithJazz>
+    </div>
+  </React.StrictMode>
 );
 
 /**

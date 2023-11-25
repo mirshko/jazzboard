@@ -34,7 +34,7 @@ export function NewProjectForm() {
 
       navigate("/project/" + project.id);
     },
-    [me, navigate],
+    [me, navigate]
   );
 
   return (
