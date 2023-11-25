@@ -94,22 +94,25 @@ function App() {
 
 export function HomeScreen() {
   const { me } = useJazz<Profile, TodoAccountRoot>();
+
   const navigate = useNavigate();
 
   return (
     <>
       {me.root?.projects?.length ? <h1>My Projects</h1> : null}
+
       {me.root?.projects?.map((project) => {
         return (
           <Button
             key={project?.id}
             onClick={() => navigate("/project/" + project?.id)}
-            variant="ghost"
+            variant="outline"
           >
             {project?.title}
           </Button>
         );
       })}
+
       <NewProjectForm />
     </>
   );

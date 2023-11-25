@@ -164,10 +164,8 @@ function NewTaskInputRow({
 }
 
 function uniqueColoring(seed: string) {
-  const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
   return {
-    color: uniqolor(seed, { lightness: darkMode ? 80 : 20 }).color,
-    background: uniqolor(seed, { lightness: darkMode ? 20 : 80 }).color,
+    color: uniqolor(seed, { lightness: 20 }).color,
+    background: uniqolor(seed, { lightness: 80 }).color,
   };
 }
