@@ -13,7 +13,7 @@ export function HomeScreen() {
         <code>{JSON.stringify(me.root, null, 2)}</code>
       </pre>
 
-      <ul className="space-y-4">
+      <ul className="flex gap-4 items-center">
         <li>
           <Button asChild variant="outline">
             <Link to="/projects">Projects</Link>
