@@ -3,19 +3,19 @@ import ReactDOM from "react-dom/client";
 import {
   RouterProvider,
   createHashRouter,
-  useNavigate,
 } from "react-router-dom";
 import "./index.css";
 
 import { WithJazz, useJazz, useAcceptInvite } from "jazz-react";
 import { LocalAuth } from "jazz-react-auth-local";
 
-import { Button, TitleAndLogo } from "./basicComponents/index.ts";
+import { Button, Toaster } from "./basicComponents/index.ts";
 import { PrettyAuthUI } from "./components/Auth.tsx";
-import { NewProjectForm } from "./3_NewProjectForm.tsx";
 import { ProjectTodoTable } from "./4_ProjectTodoTable.tsx";
-import { TodoAccountRoot, migration } from "./1_types.ts";
-import { AccountMigration, Profile } from "cojson";
+import { migration } from "./1_types.ts";
+import { AccountMigration, } from "cojson";
+
+import { HomeScreen } from "./screens/HomeScreen.tsx";
 
 /**
  * Walkthrough: The top-level provider `<WithJazz/>`
@@ -37,7 +37,9 @@ const auth = LocalAuth({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <TitleAndLogo name={appName} />
+    <div className="flex items-center gap-2 justify-center mt-5">{appName}</div>
+
+    <Toaster />
 
     <div className="flex flex-col h-full items-center justify-start gap-10 pt-10 pb-10 px-5">
       <WithJazz auth={auth} migration={migration as AccountMigration}>
@@ -91,34 +93,3 @@ function App() {
     </>
   );
 }
-
-export function HomeScreen() {
-  const { me } = useJazz<Profile, TodoAccountRoot>();
-
-  const navigate = useNavigate();
-
-  return (
-    <>
-      {me.root?.projects?.length ? <h1>My Projects</h1> : null}
-
-      <ul>
-        {me.root?.projects?.map((project, idx) => {
-          return (
-            <li key={`${idx}-${project?.id}`}>
-              <Button
-                onClick={() => navigate("/project/" + project?.id)}
-                variant="outline"
-              >
-                {project?.title}
-              </Button>
-            </li>
-          );
-        })}
-      </ul>
-
-      <NewProjectForm />
-    </>
-  );
-}
-
-/** Walkthrough: Continue with ./3_NewProjectForm.tsx */

@@ -10,6 +10,26 @@ import { CoMap, CoList, AccountMigration, Profile } from "cojson";
  *  - references to other CoValues by their CoID
  **/
 
+/** Bookmarks Types */
+
+export type Tag = CoMap<{ text: string }>;
+
+export type ListOfTags = CoList<Tag["id"]>;
+
+export type Bookmark = CoMap<{
+  url: string;
+  title: string;
+  description: string;
+  tags: ListOfTags["id"];
+}>;
+
+export type ListOfBookmarks = CoList<Bookmark["id"]>;
+
+export type BookmarkGroup = CoMap<{
+  title: string;
+  bookmarks: ListOfBookmarks["id"];
+}>;
+
 /** An individual task which collaborators can tick or rename */
 export type Task = CoMap<{ done: boolean; text: string }>;
 
