@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import { useJazz } from "jazz-react";
 
-import { ListOfTasks, TodoAccountRoot, TodoProject } from "./1_types";
+import { ListOfTasks, TodoAccountRoot, TodoProject } from "./types";
 
 import { SubmittableInput } from "./basicComponents";
 

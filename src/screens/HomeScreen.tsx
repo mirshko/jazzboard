@@ -1,4 +1,4 @@
-import { TodoAccountRoot } from "@/1_types";
+import { TodoAccountRoot } from "@/types";
 import { useJazz } from "jazz-react";
 import { useNavigate } from "react-router-dom";
 import { Profile } from "cojson";

@@ -12,7 +12,7 @@ import { LocalAuth } from "jazz-react-auth-local";
 import { Button, Toaster } from "./basicComponents/index.ts";
 import { PrettyAuthUI } from "./components/Auth.tsx";
 import { ProjectTodoTable } from "./4_ProjectTodoTable.tsx";
-import { migration } from "./1_types.ts";
+import { migration } from "./types.ts";
 import { AccountMigration, } from "cojson";
 
 import { HomeScreen } from "./screens/HomeScreen.tsx";

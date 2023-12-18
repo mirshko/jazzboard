@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import { CoID } from "cojson";
 
-import { TodoProject, Task } from "./1_types";
+import { TodoProject, Task } from "./types";
 
 import {
   Checkbox,

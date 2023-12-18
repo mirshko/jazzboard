@@ -70,5 +70,3 @@ export const migration: AccountMigration<Profile, TodoAccountRoot> = (
     );
   }
 };
-
-/** Walkthrough: Continue with ./2_main.tsx */
