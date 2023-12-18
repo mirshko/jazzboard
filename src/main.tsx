@@ -28,7 +28,7 @@ import { HomeScreen } from "./screens/HomeScreen.tsx";
  * `<WithJazz/>` also runs our account migration
  */
 
-const appName = "Jazz Todo List Example";
+const appName = "Jazzboard";
 
 const auth = LocalAuth({
   appName,
