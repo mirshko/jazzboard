@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import { CoID } from "cojson";
 
-import { TodoProject, Task } from "./types";
+import { TodoProject, Task } from "../types";
 
 import {
   Checkbox,
@@ -14,9 +14,9 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "./basicComponents";
+} from "../basicComponents";
 
-import { InviteButton } from "./components/InviteButton";
+import { InviteButton } from "../components/InviteButton";
 import uniqolor from "uniqolor";
 import { useParams } from "react-router";
 import { Resolved, useAutoSub } from "jazz-react";

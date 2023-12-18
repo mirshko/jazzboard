@@ -11,7 +11,7 @@ import { LocalAuth } from "jazz-react-auth-local";
 
 import { Button, Toaster } from "./basicComponents/index.ts";
 import { PrettyAuthUI } from "./components/Auth.tsx";
-import { ProjectTodoTable } from "./4_ProjectTodoTable.tsx";
+import { ProjectTodoTable } from "./screens/Project.tsx";
 import { migration } from "./types.ts";
 import { AccountMigration, } from "cojson";
 

@@ -3,7 +3,7 @@ import { useJazz } from "jazz-react";
 import { useNavigate } from "react-router-dom";
 import { Profile } from "cojson";
 import { Button } from "@/basicComponents";
-import { NewProjectForm } from "@/3_NewProjectForm";
+import { NewProjectForm } from "@/components/NewProjectForm";
 
 export function HomeScreen() {
   const { me } = useJazz<Profile, TodoAccountRoot>();

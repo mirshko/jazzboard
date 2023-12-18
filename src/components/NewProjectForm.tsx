@@ -2,9 +2,9 @@ import { useCallback } from "react";
 
 import { useJazz } from "jazz-react";
 
-import { ListOfTasks, TodoAccountRoot, TodoProject } from "./types";
+import { ListOfTasks, TodoAccountRoot, TodoProject } from "../types";
 
-import { SubmittableInput } from "./basicComponents";
+import { SubmittableInput } from "../basicComponents";
 
 import { useNavigate } from "react-router";
 import { Profile } from "cojson";
