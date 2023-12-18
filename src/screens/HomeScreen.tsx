@@ -1,37 +1,10 @@
-import { TodoAccountRoot } from "@/types";
-import { useJazz } from "jazz-react";
-import { useNavigate } from "react-router-dom";
-import { Profile } from "cojson";
 import { Button } from "@/basicComponents";
-import { NewProjectForm } from "@/components/NewProjectForm";
+import { Link } from "react-router-dom";
 
 export function HomeScreen() {
-  const { me } = useJazz<Profile, TodoAccountRoot>();
-
-  const navigate = useNavigate();
-
-  return (
-    <>
-      <pre><code>{JSON.stringify(me.root, null, 2)}</code></pre>
-
-      {me.root?.projects?.length ? <h1>My Projects</h1> : null}
-
-      <ul>
-        {me.root?.projects?.map((project, idx) => {
-          return (
-            <li key={`${idx}-${project?.id}`}>
-              <Button
-                onClick={() => navigate("/project/" + project?.id)}
-                variant="outline"
-              >
-                {project?.title}
-              </Button>
-            </li>
-          );
-        })}
-      </ul>
-
-      <NewProjectForm />
-    </>
-  );
+  return <>
+    <Button asChild variant="outline">
+      <Link to="/projects">Projects</Link>
+    </Button >
+  </>
 }

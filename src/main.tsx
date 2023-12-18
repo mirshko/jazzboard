@@ -15,6 +15,7 @@ import { ProjectTodoTable } from "./screens/Project.tsx";
 import { migration } from "./types.ts";
 import { AccountMigration, } from "cojson";
 
+import { ProjectsScreen } from "./screens/ProjectsScreen.tsx";
 import { HomeScreen } from "./screens/HomeScreen.tsx";
 
 /**
@@ -64,7 +65,11 @@ function App() {
   const router = createHashRouter([
     {
       path: "/",
-      element: <HomeScreen />,
+      element: <HomeScreen />
+    },
+    {
+      path: "/projects",
+      element: <ProjectsScreen />,
     },
     {
       path: "/project/:projectId",
