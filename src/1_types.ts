@@ -18,8 +18,9 @@ export type ListOfTags = CoList<Tag["id"]>;
 
 export type Bookmark = CoMap<{
   url: string;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
+  read_later?: boolean;
   tags: ListOfTags["id"];
 }>;
 
@@ -29,6 +30,8 @@ export type BookmarkGroup = CoMap<{
   title: string;
   bookmarks: ListOfBookmarks["id"];
 }>;
+
+export type ListOfBookmarkGroups = CoList<BookmarkGroup["id"]>
 
 /** An individual task which collaborators can tick or rename */
 export type Task = CoMap<{ done: boolean; text: string }>;
@@ -48,6 +51,7 @@ export type ListOfProjects = CoList<TodoProject["id"]>;
  *  where you can store top-level objects for that user */
 export type TodoAccountRoot = CoMap<{
   projects: ListOfProjects["id"];
+  bookmarks: ListOfBookmarkGroups["id"];
 }>;
 
 /** The account migration is run on account creation and on every log-in.
@@ -61,6 +65,7 @@ export const migration: AccountMigration<Profile, TodoAccountRoot> = (
       "root",
       account.createMap<TodoAccountRoot>({
         projects: account.createList<ListOfProjects>().id,
+        bookmarks: account.createList<ListOfBookmarkGroups>().id,
       }).id
     );
   }

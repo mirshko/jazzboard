@@ -12,6 +12,8 @@ export function HomeScreen() {
 
   return (
     <>
+      <pre><code>{JSON.stringify(me.root, null, 2)}</code></pre>
+
       {me.root?.projects?.length ? <h1>My Projects</h1> : null}
 
       <ul>
