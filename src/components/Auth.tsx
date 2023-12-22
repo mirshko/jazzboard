@@ -13,7 +13,7 @@ export const PrettyAuthUI: LocalAuthComponent = ({
   const [username, setUsername] = useState<string>("");
 
   return (
-    <div className="contents">
+    <>
       {loading ? (
         <div>Loading...</div>
       ) : (
@@ -50,6 +50,6 @@ export const PrettyAuthUI: LocalAuthComponent = ({
           </Text>
         </div>
       )}
-    </div>
+    </>
   );
 };
