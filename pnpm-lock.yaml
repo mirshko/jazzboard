@@ -20,6 +20,9 @@ dependencies:
   clsx:
     specifier: ^2.0.0
     version: 2.0.0
+  cojson:
+    specifier: ^0.6.5
+    version: 0.6.5
   jazz-react:
     specifier: ^0.5.0
     version: 0.5.1(react@18.2.0)
@@ -1352,12 +1355,12 @@ packages:
   /cojson-storage-indexeddb@0.6.0:
     resolution: {integrity: sha512-/FkFtwXg/Zx9b2yhi73AGQ6tJUXuwLNNrsPJD0VhlfXT08VEHGH8iBQfC9/QyUGB+vVvbMO3mpzZq6OlCevvOg==}
     dependencies:
-      cojson: 0.6.2
+      cojson: 0.6.5
       typescript: 5.3.3
     dev: false
 
-  /cojson@0.6.2:
-    resolution: {integrity: sha512-8/G9U7fENF3g+LQS+XmRb4REvAUhXnejelmaGDXPeApZQTAqlvitQqJz7kZtRamOwXxRR/65xJlvmQ0PdVo2YA==}
+  /cojson@0.6.5:
+    resolution: {integrity: sha512-2UidPZajzTTEw2yrhQgrPxseT9QFr2ZiUv91ibtIM8ZPZ/6HfmGCcJgv02EeAWyKNQUVK5rLKBsioXov8A64xw==}
     dependencies:
       '@hazae41/berith': 1.2.6
       '@noble/ciphers': 0.1.4
@@ -1837,7 +1840,7 @@ packages:
   /jazz-autosub@0.6.0:
     resolution: {integrity: sha512-+CeRXRLTWthYJBLVPU77x+XjVC1VQO1fOqAlKjxrN4HNvIUlu5z14BwqiSMRWQdBVPnbfd24O9WuMl+URrqp4w==}
     dependencies:
-      cojson: 0.6.2
+      cojson: 0.6.5
     dev: false
 
   /jazz-browser-auth-local@0.5.0:
@@ -1850,7 +1853,7 @@ packages:
   /jazz-browser@0.6.0:
     resolution: {integrity: sha512-ER0nqJo6EepBlKVm4b9uxa72Uw9Oi+WcVoku/xExA3pWvYefzqkEsoR1JqTiSmFHdnPTrDFQMX3msiYclialbA==}
     dependencies:
-      cojson: 0.6.2
+      cojson: 0.6.5
       cojson-storage-indexeddb: 0.6.0
       jazz-autosub: 0.6.0
       typescript: 5.3.3
@@ -1872,7 +1875,7 @@ packages:
     peerDependencies:
       react: 17 - 18
     dependencies:
-      cojson: 0.6.2
+      cojson: 0.6.5
       jazz-browser: 0.6.0
       react: 18.2.0
       typescript: 5.3.3
