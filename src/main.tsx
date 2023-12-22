@@ -1,9 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  RouterProvider,
-  createHashRouter,
-} from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
+import "@fontsource/inter";
 import "./index.css";
 
 import { WithJazz, useJazz, useAcceptInvite } from "jazz-react";
@@ -13,7 +11,7 @@ import { Button, Toaster } from "./basicComponents/index.ts";
 import { PrettyAuthUI } from "./components/Auth.tsx";
 import { ProjectTodoTable } from "./screens/Project.tsx";
 import { migration } from "./types.ts";
-import { AccountMigration, } from "cojson";
+import { AccountMigration } from "cojson";
 
 import { ProjectsScreen } from "./screens/ProjectsScreen.tsx";
 import { HomeScreen } from "./screens/HomeScreen.tsx";
@@ -65,7 +63,7 @@ function App() {
   const router = createHashRouter([
     {
       path: "/",
-      element: <HomeScreen />
+      element: <HomeScreen />,
     },
     {
       path: "/projects",
