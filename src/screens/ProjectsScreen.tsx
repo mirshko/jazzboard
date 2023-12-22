@@ -13,22 +13,26 @@ export function ProjectsScreen() {
 
   return (
     <>
-      {me.root?.projects?.length ? <Text>Projects</Text> : null}
+      {me.root?.projects && (
+        <>
+          <Text>Projects</Text>
 
-      <ul>
-        {me.root?.projects?.map((project, idx) => {
-          return (
-            <li key={`${idx}-${project?.id}`}>
-              <Button
-                onClick={() => navigate("/project/" + project?.id)}
-                outline
-              >
-                {project?.title}
-              </Button>
-            </li>
-          );
-        })}
-      </ul>
+          <ul>
+            {me.root.projects.map((project, idx) => {
+              return (
+                <li key={`${idx}-${project?.id}`}>
+                  <Button
+                    onClick={() => navigate("/project/" + project?.id)}
+                    outline
+                  >
+                    {project?.title}
+                  </Button>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      )}
 
       <NewProjectForm />
     </>

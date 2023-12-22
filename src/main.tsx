@@ -7,15 +7,12 @@ import { WithJazz, useJazz, useAcceptInvite } from "jazz-react";
 import { LocalAuth } from "jazz-react-auth-local";
 
 import { PrettyAuthUI } from "./components/Auth.tsx";
-import { ProjectTodoTable } from "./screens/Project.tsx";
 import { migration } from "./types.ts";
 import { AccountMigration } from "cojson";
 
 import { Button } from "./ui/button.tsx";
 
-import { ProjectsScreen } from "./screens/ProjectsScreen.tsx";
 import { HomeScreen } from "./screens/HomeScreen.tsx";
-import { BookmarksScreen } from "./screens/BookmarksScreen.tsx";
 
 /**
  * Walkthrough: The top-level provider `<WithJazz/>`
@@ -64,15 +61,15 @@ function App() {
     },
     {
       path: "/projects",
-      element: <ProjectsScreen />,
+      lazy: () => import("./pages/projects.tsx"),
     },
     {
       path: "/project/:projectId",
-      element: <ProjectTodoTable />,
+      lazy: () => import("./pages/project.tsx"),
     },
     {
       path: "/bookmarks",
-      element: <BookmarksScreen />,
+      lazy: () => import("./pages/bookmarks.tsx"),
     },
     {
       path: "/invite/*",
