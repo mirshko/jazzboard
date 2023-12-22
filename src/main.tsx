@@ -1,20 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import "@fontsource/inter";
 import "./index.css";
 
 import { WithJazz, useJazz, useAcceptInvite } from "jazz-react";
 import { LocalAuth } from "jazz-react-auth-local";
 
-import { Button, Toaster } from "./basicComponents/index.ts";
 import { PrettyAuthUI } from "./components/Auth.tsx";
 import { ProjectTodoTable } from "./screens/Project.tsx";
 import { migration } from "./types.ts";
 import { AccountMigration } from "cojson";
 
+import { Button } from "./ui/button.tsx";
+
 import { ProjectsScreen } from "./screens/ProjectsScreen.tsx";
 import { HomeScreen } from "./screens/HomeScreen.tsx";
+import { BookmarksScreen } from "./screens/BookmarksScreen.tsx";
 
 /**
  * Walkthrough: The top-level provider `<WithJazz/>`
@@ -36,11 +37,7 @@ const auth = LocalAuth({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className="flex items-center gap-2 justify-center mt-5">{appName}</div>
-
-    <Toaster />
-
-    <div className="flex flex-col h-full items-center justify-start gap-10 pt-10 pb-10 px-5">
+    <div className="p-5 min-h-svh flex flex-col items-center justify-center">
       <WithJazz auth={auth} migration={migration as AccountMigration}>
         <App />
       </WithJazz>
@@ -74,6 +71,10 @@ function App() {
       element: <ProjectTodoTable />,
     },
     {
+      path: "/bookmarks",
+      element: <BookmarksScreen />,
+    },
+    {
       path: "/invite/*",
       element: <p>Accepting invite...</p>,
     },
@@ -87,12 +88,11 @@ function App() {
     <>
       <RouterProvider router={router} />
 
-      <Button
-        onClick={() => router.navigate("/").then(logOut)}
-        variant="outline"
-      >
-        Log Out
-      </Button>
+      <div className="fixed top-5 right-5">
+        <Button onClick={() => router.navigate("/").then(logOut)}>
+          Log Out
+        </Button>
+      </div>
     </>
   );
 }

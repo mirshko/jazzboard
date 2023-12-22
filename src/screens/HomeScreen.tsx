@@ -1,31 +1,18 @@
-import { Button } from "@/basicComponents";
-import { Link } from "react-router-dom";
-import { TodoAccountRoot } from "@/types";
-import { useJazz } from "jazz-react";
-import { Profile } from "cojson";
+import { Button } from "@/ui/button";
+import { Text } from "@/ui/text";
 
 export function HomeScreen() {
-  const { me } = useJazz<Profile, TodoAccountRoot>();
-
   return (
-    <>
-      <pre>
-        <code>{JSON.stringify(me.root, null, 2)}</code>
-      </pre>
+    <div className="flex flex-col gap-5 items-center">
+      <Text>Links</Text>
 
-      <ul className="flex gap-4 items-center">
-        <li>
-          <Button asChild variant="outline">
-            <Link to="/projects">Projects</Link>
-          </Button>
-        </li>
+      <Button outline href="/projects">
+        Projects
+      </Button>
 
-        <li>
-          <Button asChild variant="outline">
-            <Link to="/bookmarks">Bookmarks</Link>
-          </Button>
-        </li>
-      </ul>
-    </>
+      <Button outline href="/bookmarks">
+        Bookmarks
+      </Button>
+    </div>
   );
 }

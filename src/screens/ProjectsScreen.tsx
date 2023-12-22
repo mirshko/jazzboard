@@ -2,8 +2,9 @@ import { TodoAccountRoot } from "@/types";
 import { useJazz } from "jazz-react";
 import { useNavigate } from "react-router-dom";
 import { Profile } from "cojson";
-import { Button } from "@/basicComponents";
 import { NewProjectForm } from "@/components/NewProjectForm";
+import { Text } from "@/ui/text";
+import { Button } from "@/ui/button";
 
 export function ProjectsScreen() {
   const { me } = useJazz<Profile, TodoAccountRoot>();
@@ -12,7 +13,7 @@ export function ProjectsScreen() {
 
   return (
     <>
-      {me.root?.projects?.length ? <h1>My Projects</h1> : null}
+      {me.root?.projects?.length ? <Text>Projects</Text> : null}
 
       <ul>
         {me.root?.projects?.map((project, idx) => {
@@ -20,7 +21,7 @@ export function ProjectsScreen() {
             <li key={`${idx}-${project?.id}`}>
               <Button
                 onClick={() => navigate("/project/" + project?.id)}
-                variant="outline"
+                outline
               >
                 {project?.title}
               </Button>
