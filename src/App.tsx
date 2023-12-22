@@ -1,7 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
-import { Layout } from "./layout.tsx";
-import { Providers } from "./providers.tsx";
 import { HomeScreen } from "./screens/HomeScreen.tsx";
 
 /**
@@ -15,35 +13,35 @@ import { HomeScreen } from "./screens/HomeScreen.tsx";
 export default function App() {
   const router = createBrowserRouter([
     {
-      Component: Layout,
+      path: "/",
+      async lazy() {
+        const { Layout } = await import("./layout.tsx");
+        return { Component: Layout };
+      },
       children: [
         {
-          path: "/",
+          index: true,
           element: <HomeScreen />,
         },
         {
-          path: "/projects",
+          path: "projects",
           lazy: () => import("./routes/projects.tsx"),
         },
         {
-          path: "/project/:projectId",
+          path: "project/:projectId",
           lazy: () => import("./routes/project.tsx"),
         },
         {
-          path: "/bookmarks",
+          path: "bookmarks",
           lazy: () => import("./routes/bookmarks.tsx"),
         },
         {
-          path: "/invite/*",
+          path: "invite/*",
           lazy: () => import("./routes/invite.tsx"),
         },
       ],
     },
   ]);
 
-  return (
-    <Providers>
-      <RouterProvider router={router} />
-    </Providers>
-  );
+  return <RouterProvider router={router} />;
 }

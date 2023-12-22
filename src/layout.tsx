@@ -1,27 +1,22 @@
-import { Button } from "@/ui/button";
-import { useJazz } from "jazz-react";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet } from "react-router";
+import LogOutButton from "./components/LogOutButton";
+import { Providers } from "./providers";
+import { Button } from "./ui/button";
 
 export function Layout() {
-  const navigate = useNavigate();
-
-  // logOut logs out the AuthProvider passed to `<WithJazz/>` above.
-  const { logOut } = useJazz();
-
   return (
-    <>
+    <Providers>
+      <div className="fixed top-5 left-5">
+        <Button outline href="/">
+          Jazzboard
+        </Button>
+      </div>
+
       <Outlet />
 
       <div className="fixed top-5 right-5">
-        <Button
-          onClick={() => {
-            navigate("/");
-            logOut();
-          }}
-        >
-          Log Out
-        </Button>
+        <LogOutButton />
       </div>
-    </>
+    </Providers>
   );
 }
